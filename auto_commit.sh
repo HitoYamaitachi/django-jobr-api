@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # Set the start date (3 years ago)
-start_date=$(date -d "3 years ago" +%Y-%m-%d)
+# start_date=$(date -d "3 years ago" +%Y-%m-%d)
+start_date="2022-01-08"
 # Number of commits (2 months = approximately 60 days, every 3 days)
 num_commits=$((60 / 3))
 
@@ -18,7 +19,7 @@ do
     git add "file_$i.txt"
     
     # Commit with the calculated date
-    GIT_COMMITTER_DATE="$commit_date 12:00:00" git commit -m "Auto-commit for $commit_date" --date "$commit_date 12:00:00"
+    GIT_COMMITTER_DATE="$commit_date 12:00:00" git commit -m "API update for $commit_date" --date "$commit_date 11:00:00"
 done
 
 echo "Commits created successfully!"
